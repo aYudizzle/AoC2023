@@ -23,7 +23,7 @@ class Day04 {
 
     fun part2(): Int {
         val scoredCards = input.mapIndexed { index, input ->
-            val winningNumbers = input.substringBefore("| ").substringAfter(": ").chunked(3).map { it.trim().toInt() }
+            val winningNumbers = input.substringBefore("|").substringAfter(": ").chunked(3).map { it.trim().toInt() }
             (index + 1) to input.substringAfter("|").chunked(3).map { it.trim().toInt() }
                 .count() { it in winningNumbers }
         }
